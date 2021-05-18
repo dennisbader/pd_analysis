@@ -1,3 +1,5 @@
+import numpy as np
+
 class Distribution:
 	
 	def __init__(self, mu=0, sigma=1):
@@ -14,7 +16,6 @@ class Distribution:
 		self.mean = mu
 		self.stdev = sigma
 		self.data = []
-
 
 	def read_data_file(self, file_name):
 	
@@ -37,5 +38,5 @@ class Distribution:
 				line = file.readline()
 		file.close()
 	
-		self.data = data_list
+		self.data = np.array(data_list)
 

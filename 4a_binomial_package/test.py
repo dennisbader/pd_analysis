@@ -9,6 +9,7 @@ import unittest
 from distributions import Gaussian
 from distributions import Binomial
 
+
 class TestGaussianClass(unittest.TestCase):
     def setUp(self):
         self.gaussian = Gaussian(25, 2)
@@ -19,7 +20,7 @@ class TestGaussianClass(unittest.TestCase):
         self.assertEqual(self.gaussian.stdev, 2, 'incorrect standard deviation')
 
     def test_readdata(self):
-        self.assertEqual(self.gaussian.data,\
+        self.assertEqual(list(self.gaussian.data),\
          [1, 3, 99, 100, 120, 32, 330, 23, 76, 44, 31], 'data not read in correctly')
 
     def test_meancalculation(self):
@@ -45,7 +46,8 @@ class TestGaussianClass(unittest.TestCase):
         
         self.assertEqual(gaussian_sum.mean, 55)
         self.assertEqual(gaussian_sum.stdev, 5)
-        
+
+
 class TestBinomialClass(unittest.TestCase):
     def setUp(self):
         self.binomial = Binomial(0.4, 20)
@@ -56,7 +58,7 @@ class TestBinomialClass(unittest.TestCase):
         self.assertEqual(self.binomial.n, 20, 'n value incorrect')
 
     def test_readdata(self):
-        self.assertEqual(self.binomial.data,\
+        self.assertEqual(list(self.binomial.data),\
          [0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0], 'data not read in correctly')
     
     def test_calculatemean(self):
